@@ -5,10 +5,10 @@ import { clubSelector, membersSelector } from "./Selectors";
 const Output = ({ clubName, members }) => {
   let array = [];
   if (members)
-    for (let i = 0; i < members.length; i++) {
-      array.push(<li>{members[i].firstName}</li>);
-      array.push(<li>{members[i].lastName}</li>);
-    }
+    members.forEach(el => {
+      array.push(<li>{el.firstName}</li>);
+      array.push(<li>{el.lastName}</li>);
+    })
   return (
     <div>
       <ul>
